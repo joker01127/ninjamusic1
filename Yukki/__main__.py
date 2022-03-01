@@ -228,15 +228,9 @@ async def initiate_bot():
     console.print(f"\n[red]Stopping Bot")
 
 
-home_text_pm = f"""💕╎ مرحبا بك عزيزي  ,
-
-💕╎ اهلا بك في نينجا سونجس اقوي بوت في التليجرام {BOT_NAME}.
-
-💕╎ اختصاصي تشغيل الاغاني في الدردشات الصوتيه 
-
-💕╎ لمعرفه تشغيلي تابع الازرار الاتيه
-
-في مواجهة اي مشكله في استخدام البوت تواصل مع المطور 💌 [YeS Me NiNja <](https://t.me/dont_run).
+home_text_pm = f"""Hello firstname,
+My name is {BOT_NAME}.
+A Telegram Music+Video Streaming bot with some useful features.
 
 All commands can be used with: / """
 
@@ -294,13 +288,7 @@ async def start_command(_, message):
                     f"{message.from_user.mention} has just started bot to check <code>SUDOLIST</code>\n\n**USER ID:** {sender_id}\n**USER NAME:** {sender_name}",
                 )
         if name == "help":
-            text, keyboard = await help_parser(message.from_user.mention)
-            await message.delete()
-            return await app.send_text(
-                message.chat.id,
-                text,
-                reply_markup=keyboard,
-            )
+            return await start_menu_private(message)
         if name[0] == "i":
             m = await message.reply_text("🔎 Fetching Info!")
             query = (str(name)).replace("info_", "", 1)
@@ -357,17 +345,8 @@ async def start_command(_, message):
                     f"{message.from_user.mention} has just started bot to check <code>VIDEO INFORMATION</code>\n\n**USER ID:** {sender_id}\n**USER NAME:** {sender_name}",
                 )
             return
-    
-    await start_menu_private(message)
-    if await is_on_off(5):
-        sender_id = message.from_user.id
-        sender_name = message.from_user.first_name
-        umention = f"[{sender_name}](tg://user?id={int(sender_id)})"
-        return await LOG_CLIENT.send_message(
-            LOG_GROUP_ID,
-            f"{message.from_user.mention} has just started Bot.\n\n**USER ID:** {sender_id}\n**USER NAME:** {sender_name}",
-        )
-    return
+    else:
+        return await start_menu_private(message)
 
 
 async def help_parser(name, keyboard=None):
