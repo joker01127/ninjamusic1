@@ -20,11 +20,11 @@ MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME")
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 
-UPSTREAM_REPO = "https://github.com/ninja1120/ninjamusicvvx"
+UPSTREAM_REPO = "https://github.com/TechShreyash/SiestaXMusic"
 UPSTREAM_BRANCH = "main"
 
-SUPPORT_CHANNEL = "https://t.me/NiNJa_SuPPoORT"
-SUPPORT_GROUP = "https://t.me/dont_run"
+SUPPORT_CHANNEL = "https://t.me/TechZBots"
+SUPPORT_GROUP = "https://t.me/TechZBots_Support"
 
 THUMBNAIL = getenv("THUMB_LINK") 
 
@@ -59,3 +59,13 @@ if str(getenv("LOG_SESSION")).strip() == "":
     LOG_SESSION = str(None)
 else:
     LOG_SESSION = str(getenv("LOG_SESSION"))
+
+if str(getenv("LIMIT")).strip().upper() == "FALSE":
+    PL_LIMIT = "FALSE"
+else:
+    PL_LIMIT = "TRUE"
+
+if str(getenv("PM_PERMIT")).strip().upper() == "FALSE":
+    PM_PERMIT = "FALSE"
+else:
+    PM_PERMIT = "TRUE"

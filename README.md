@@ -93,9 +93,6 @@ shikhar@MacBook~ $ bash start
 - [Contact Owner](https://t.me/Tech_Shreyash)
 
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ninja1120/ninjamusicvvx)
-
-
 ## License
 
 Distributed under the [GNU General Public License v3.0 License.](https://github.com/notreallyshikhar/YukkiMusicBot/blob/main/LICENSE) See `LICENSE.md` for more information.
