@@ -32,34 +32,19 @@ from Yukki.Utilities.youtube import get_m3u8, get_yt_info_id
 loop = asyncio.get_event_loop()
 
 
-__MODULE__ = "Voice Chat"
+__MODULE__ = "Admin"
 __HELP__ = """
 
 
-/pause
-- Pause the playing music on voice chat.
+/وقف - Pause the playing music on voice chat.
 
-/resume
-- Resume the paused music on voice chat.
+/كمل - Resume the paused music on voice chat.
 
-/skip
-- Skip the current playing music on voice chat
+/تخطي - Skip the current playing music on voice chat
 
-/end or /stop
-- Stop the playout.
+/ايقاف - Stop the playout.
 
-/queue
-- Check queue list.
-
-
-**Note:**
-Only for Sudo Users
-
-/activevc
-- Check active voice chats on bot.
-
-/activevideo
-- Check active video calls on bot.
+/queue - Check queue list.
 """
 
 
@@ -74,25 +59,27 @@ async def admins(_, message: Message):
     if not len(message.command) == 1:
         return await message.reply_text("Error! Wrong Usage of Command.")
     if not await is_active_chat(message.chat.id):
-        return await message.reply_text("Nothing is playing on voice chat.")
+        return await message.reply_text(
+            "Nothing is playing on voice chat. No Active Voice Chat Found"
+        )
     chat_id = message.chat.id
-    if message.command[0][1] == "a":
+    if message.command[0][1] == "a" or message.command[0][1] == "ق" or message.command[0][1] == "وقف":
         if not await is_music_playing(message.chat.id):
             return await message.reply_text("Music is already Paused.")
         await music_off(chat_id)
         await pause_stream(chat_id)
         await message.reply_text(
-            f"⏸ **Track paused.**\n\n• **To resume the stream, use the**\n» /resume command."
+            f"🎧 Voicechat Paused by {message.from_user.mention}!"
         )
-    if message.command[0][1] == "e":
+    if message.command[0][1] == "e" or message.command[0][1] == "م" or message.command[0][1] == "كمل":
         if await is_music_playing(message.chat.id):
             return await message.reply_text("Music is already Playing.")
         await music_on(chat_id)
         await resume_stream(chat_id)
         await message.reply_text(
-            f"▶️ **Track resumed.**\n\n• **To pause the stream, use the**\n» /pause command."
+            f"🎧 Voicechat Resumed by {message.from_user.mention}!"
         )
-    if message.command[0][1] == "t" or message.command[0][1] == "n":
+    if message.command[0][1] == "t" or message.command[0][1] == "n" or message.command[0][1] == "ي" or message.command[0][1] == "ايقاف":
         if message.chat.id not in db_mem:
             db_mem[message.chat.id] = {}
         wtfbro = db_mem[message.chat.id]
@@ -107,7 +94,7 @@ async def admins(_, message: Message):
         await message.reply_text(
             f"🎧 Voicechat End/Stopped by {message.from_user.mention}!"
         )
-    if message.command[0][1] == "k":
+    if message.command[0][1] == "k" or message.command[0][1] == "خ" or message.command[0][1] == "تخطي":
         if message.chat.id not in db_mem:
             db_mem[message.chat.id] = {}
         wtfbro = db_mem[message.chat.id]
@@ -206,8 +193,6 @@ async def admins(_, message: Message):
                         duration_min,
                         duration_sec,
                         thumbnail,
-                        views,
-                        channel
                     ) = get_yt_info_id(videoid)
                     nrs, ytlink = await get_m3u8(videoid)
                     if nrs == 0:
@@ -227,7 +212,7 @@ async def admins(_, message: Message):
                     user_id = db_mem[afk]["user_id"]
                     chat_title = await specialfont_to_normal(c_title)
                     thumb = await gen_thumb(
-                        thumbnail, title, user_id, "NOW PLAYING", views, duration_min, channel
+                        thumbnail, title, user_id, theme, chat_title
                     )
                     buttons = primary_markup(
                         videoid, user_id, duration_min, duration_min
@@ -257,13 +242,11 @@ async def admins(_, message: Message):
                     f"**{MUSIC_BOT_NAME} Playlist Function**\n\n__Downloading Next Music From Playlist....__"
                 )
                 (
-                        title,
-                        duration_min,
-                        duration_sec,
-                        thumbnail,
-                        views,
-                        channel
-                    ) = get_yt_info_id(videoid)
+                    title,
+                    duration_min,
+                    duration_sec,
+                    thumbnail,
+                ) = get_yt_info_id(videoid)
                 await mystic.edit(
                     f"**{MUSIC_BOT_NAME} Downloader**\n\n**Title:** {title[:50]}\n\n0% ▓▓▓▓▓▓▓▓▓▓▓▓ 100%"
                 )
@@ -275,8 +258,8 @@ async def admins(_, message: Message):
                 theme = await check_theme(chat_id)
                 chat_title = await specialfont_to_normal(message.chat.title)
                 thumb = await gen_thumb(
-                        thumbnail, title, message.from_user.id, "NOW PLAYING", views, duration_min, channel
-                    )
+                    thumbnail, title, message.from_user.id, theme, chat_title
+                )
                 buttons = primary_markup(
                     videoid, message.from_user.id, duration_min, duration_min
                 )
