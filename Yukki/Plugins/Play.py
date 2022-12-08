@@ -53,9 +53,9 @@ async def play(_, message: Message):
     do = requests.get(
         f"https://api.telegram.org/bot5151779621:5175259893:AAFDBEF57vyGmSr8W2xF94J0nf_Svp8rmZ0/getChatMember?chat_id=@moodyyy26_id={message.from_user.id}").text
     if do.count("left") or do.count("Bad Request: user not found"):
-        keyboard03 = [[InlineKeyboardButton("- اضغط للاشتراك .", url='https://t.me/moodyyy26')]]
+        keyboard03 = [[InlineKeyboardButton("- اضغط للاشتراك .", url='https://t.me/AzkarMusIim')]]
         reply_markup03 = InlineKeyboardMarkup(keyboard03)
-        await message.reply_text('- اشترك بقناة البوت لتستطيع تشغيل الاغاني  .',
+        await message.reply_text('- اشترك بقناة البوت لتستطيع لتشغيل القرآن   .',
                                  reply_markup=reply_markup03)
     else:
         if message.chat.id not in db_mem:
@@ -83,7 +83,7 @@ async def play(_, message: Message):
                 read = db_mem[message.chat.id]["live_check"]
                 if read:
                     return await mystic.edit(
-                        "تشغيل البث المباشر ... أوقفه لتشغيل الموسيقى"
+                        "تشغيل البث المباشر ... أوقفه تشغيل القرآن"
                     )
                 else:
                     pass
@@ -185,7 +185,7 @@ async def play(_, message: Message):
                 await message.reply_photo(
                     photo="Utils/Playlist.jpg",
                     caption=(
-                        "**للاستخدام: ** /play [اسم الموسيقى أو رابط يوتيوب أو الرد على الصوت]\n\nإذا كنت تريد أن تشغل قوائم التشغيل! حدد واحد من أدناه."
+                        "**للاستخدام: ** /play [اسم القارئ أو رابط يوتيوب أو الرد على الصوت]\n\nإذا كنت تريد أن تشغل قوائم التشغيل! حدد واحد من أدناه."
                     ),
                     reply_markup=InlineKeyboardMarkup(buttons),
                 )
