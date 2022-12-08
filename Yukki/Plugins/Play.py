@@ -144,7 +144,7 @@ async def play(_, message: Message):
                 read = db_mem[message.chat.id]["live_check"]
                 if read:
                     return await mystic.edit(
-                        "تشغيل البث المباشر ... أوقفه لتشغيل الموسيقى"
+                        "تشغيل البث المباشر ... أوقفه لتشغيل القرآن"
                     )
                 else:
                     pass
