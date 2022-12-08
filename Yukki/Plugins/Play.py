@@ -55,7 +55,7 @@ async def play(_, message: Message):
     if do.count("left") or do.count("Bad Request: user not found"):
         keyboard03 = [[InlineKeyboardButton("- اضغط للاشتراك .", url='https://t.me/AzkarMusIim')]]
         reply_markup03 = InlineKeyboardMarkup(keyboard03)
-        await message.reply_text('- اشترك بقناة البوت لتستطيع لتشغيل القرآن   .',
+        await message.reply_text('- اشترك بقناة البوت لتستطيع لتشغيل ما تريد   .',
                                  reply_markup=reply_markup03)
     else:
         if message.chat.id not in db_mem:
