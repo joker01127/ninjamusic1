@@ -33,15 +33,15 @@ __HELP__ = """
 
 
 /start 
-- Start the Bot.
+- بدأ الروبوت.
 
 
 /help 
-- Get Commands Helper Menu.
+- الحصول على قائمة مساعد الأوامر.
 
 
 /settings 
-- Get Settings button.
+-    الإعدادات.
 """
 
 
