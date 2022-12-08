@@ -35,13 +35,13 @@ loop = asyncio.get_event_loop()
 __MODULE__ = "VideoCalls"
 __HELP__ = f"""
 
-/play [Reply to any Video] or [YT Link] or [Music Name]
-- Stream Video on Voice Chat
+/play أو [الرد على أي فيديو‌‌] أو [رابط يوتيوب] [اسم سورة من القرآن]
+- بدء تشغيل  الفيديو في الدردشة الصوتية‌‌
 
 **For Sudo User:-**
 
 /set_video_limit [Number of Chats]
-- Set a maximum Number of Chats allowed for Video Calls at a time.
+- قم بتعيين الحد الأقصى لعدد الدردشات المسموح به لمكالمات الفيديو في كل مرة.‌‌
 
 
 """
