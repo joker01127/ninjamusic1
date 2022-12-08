@@ -16,7 +16,7 @@ __HELP__ = f"""
 
 
 /checkassistant
-- Check the alloted assistant of your chat
+- تحقق من الحساب المساعد المخصص للدردشة الخاصة بك
 
 
 **Note:**
