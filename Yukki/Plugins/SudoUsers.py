@@ -28,10 +28,10 @@ __HELP__ = """
 Only for Sudo Users. 
 
 
-/addsudo [Username or Reply to a user]
+/addsudo [اسم المستخدم أو الرد على مستخدم]
 - لإضافة مستخدم في مستخدمي Bot's Sudo‌‌.
 
-/delsudo [Username or Reply to a user]
+/delsudo [اسم المستخدم أو الرد على مستخدم]
 - لإزالة مستخدم من مستخدمي Bot's Sudo.‌‌
 
 /maintenance [enable / disable]
