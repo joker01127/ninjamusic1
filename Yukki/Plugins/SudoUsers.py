@@ -29,19 +29,19 @@ Only for Sudo Users.
 
 
 /addsudo [Username or Reply to a user]
-- To Add A User In Bot's Sudo Users.
+- لإضافة مستخدم في مستخدمي Bot's Sudo‌‌.
 
 /delsudo [Username or Reply to a user]
-- To Remove A User from Bot's Sudo Users.
+- لإزالة مستخدم من مستخدمي Bot's Sudo.‌‌
 
 /maintenance [enable / disable]
-- When enabled Bot goes under maintenance mode. No one can play Music now!
+- عند التمكين ، يدخل الروبوت في وضع الصيانة. لا أحد يستطيع تشغيل القران الآن‌‌!
 
 /logger [enable / disable]
-- When enabled Bot logs the searched queries in logger group.
+-عند التمكين ، يقوم البوت بتسجيل الاستعلامات التي تم البحث عنها في مجموعة المسجل‌‌.
 
 /clean
-- Clean Temp Files and Logs.
+- تنظيف الملفات والسجلات المؤقتة.
 """
 # Add Sudo Users!
 
