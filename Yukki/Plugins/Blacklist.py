@@ -9,7 +9,7 @@ __HELP__ = """
 
 
 /blacklistedchat 
-- Check Blacklisted Chats of Bot.
+- تحقق من الدردشات المدرجة في القائمة السوداء لـ Bot..
 
 
 **Note:**
@@ -17,11 +17,11 @@ Only for Sudo Users.
 
 
 /blacklistchat [CHAT_ID] 
-- Blacklist any chat from using Music Bot
+- قم بإدراج أي دردشة في القائمة السوداء من استخدام Bot Quran.
 
 
 /whitelistchat [CHAT_ID] 
-- Whitelist any blacklisted chat from using Music Bot
+- أضف دردشة في القائمة السوداء إلى القائمة البيضاء من استخدام بوت القرآن
 
 """
 
