@@ -20,19 +20,19 @@ __HELP__ = """
 
 
 /playplaylist 
-- Start playing Your Saved Playlist.
+- لبدء تشغيل قائمة التشغيل المحفوظة.
 
 
 /playlist 
-- Check Your Saved Playlist On Servers.
+- تحقق من قائمة التشغيل المحفوظة على الخوادم.
 
 
 /delmyplaylist
-- Delete any saved music in your playlist
+- لحذف أي موسيقى محفوظة في قائمة التشغيل الخاصة بك
 
 
 /delgroupplaylist
-- Delete any saved music in your group's playlist [Requires Admin Rights.]
+،احذف أي موسيقى محفوظة في قائمة التشغيل الخاصة بمجموعتك [يتطلب حقوق المسؤول.]
 """
 
 
