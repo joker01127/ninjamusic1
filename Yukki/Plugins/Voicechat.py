@@ -25,16 +25,15 @@ __HELP__ = """
 Only for Sudo Users
 
 
-/joinassistant [Chat Username or Chat ID]
-- Join assistant to a group.
+/joinassistant [اسم مستخدم الدردشة أو معرف الدردشة]
+- انضم الحساب المساعد لي مجموعة.‌‌
 
 
-/leaveassistant [Chat Username or Chat ID]
-- Assistant will leave the particular group.
-
+/leaveassistant [اسم مستخدم الدردشة أو معرف الدردشة]
+- سيترك الحساب المساعد الدردشه  .
 
 /leavebot [Chat Username or Chat ID]
-- Bot will leave the particular chat.
+- سوف يغادر البوت الدردشة المعينة‌‌.
 """
 
 @app.on_callback_query(filters.regex("gback_list_chose_stream"))
